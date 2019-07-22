@@ -20,7 +20,7 @@ class ScoreComponent extends React.Component{
     event.preventDefault();
     console.log(event.target.value)
     this.props.addScore(event.target.value);
-    //this.props.history.push('/result');
+    this.props.history.push('/result');
 
   }
 

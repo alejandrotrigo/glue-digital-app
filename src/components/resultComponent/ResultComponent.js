@@ -1,20 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getScores} from '../../actions/MainActions';
 
 class ResultComponent extends React.Component {
-
-  constructor(props){
-    super(props);
-  }
-
-  getScores(){
-    let lis = [];
-    console.log(this.props.otherScores)
-    for (var u in this.props.otherScores){
-      lis.push(<li> {u.user} -> {u.score} </li>);
-    }
-  }
 
   render(){
 

@@ -42,7 +42,7 @@ export function getScores(name, score){
       });
       dispatch(getScoresResponse(userScores));
     });
-    var aa = sp.pick(parseInt(score));
+    sp.pick(parseInt(score));
   }
 
 }

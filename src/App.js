@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import * as serviceWorker from './serviceWorker';
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import HomeComponent from './components/homeComponent/HomeComponent';
 import ScoreComponent from './components/scoreComponent/ScoreComponent';

@@ -7,10 +7,6 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 class ScoreComponent extends React.Component{
 
-  constructor(props){
-    super(props);
-  }
-
   onClickButton(value){
     this.props.addScore(value);
     this.props.getScores(this.props.name, value);

@@ -53,6 +53,7 @@ class ScoreComponent extends React.Component{
 const mapDispatchToProps = (dispatch) => {
   return {
     addScore: (score) => { dispatch(addScore(score)) }
+
   }
 }
 

@@ -5,7 +5,7 @@ import styles from './homeComponent.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import {add_name} from '../../actions/MainActions';
+import {addName} from '../../actions/MainActions';
 
 class HomeComponent extends React.Component {
 
@@ -47,7 +47,7 @@ class HomeComponent extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addName : (name) => { dispatch(add_name(name)) }
+    addName : (name) => { dispatch(addName(name)) }
   }
 }
 

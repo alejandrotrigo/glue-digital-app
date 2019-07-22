@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {add_score} from '../../actions/MainActions';
+import {addScore} from '../../actions/MainActions';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
@@ -52,7 +52,7 @@ class ScoreComponent extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addScore: (score) => { dispatch(add_score(score)) }
+    addScore: (score) => { dispatch(addScore(score)) }
   }
 }
 

@@ -1,21 +1,48 @@
-const ADD_NAME = "ADD_NAME";
-const ADD_SCORE = "ADD_SCORE";
+import * as types from '../consts/MainReducerTypes';
+import ScrumPokerLib from 'scrum-poker-lib';
 
-export default {
-  add_name,
-  add_score
-}
-
-export function add_name(name){
+export function addName(name){
   return{
-    type: ADD_NAME,
+    type: types.ADD_NAME,
     name
   }
 }
 
-export function add_score(score){
+export function addScore(score){
   return {
-    type: ADD_SCORE,
+    type: types.ADD_SCORE,
     score
   }
+}
+
+function getScoresRequest(){
+  return {
+    type: types.GET_SCORES_REQUEST
+  }
+}
+
+function getScoresResponse(scores){
+  return {
+    type: types.GET_SCORES_RESPONSE,
+    scores
+  }
+}
+
+export function getScores(name){
+  return dispatch => {
+    dispatch(getScoresRequest(true));
+    let userScores = {};
+    const sp = new ScrumPokerLib(name);
+    sp.on('reveal', cards => {
+      cards.forEach(c =>{
+        var userScore ={};
+        userScore.user = c.user;
+        userScore.value = c.value;
+        userScores.push(userScore);
+      });
+      dispatch(getScoresResponse(userScores));
+    });
+
+  }
+
 }

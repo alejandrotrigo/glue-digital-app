@@ -1,25 +1,9 @@
 import React from 'react';
-import ScrumPokerLib from 'scrum-poker-lib'
 import {connect} from 'react-redux';
 
 class ResultComponent extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      isLoading: false
-    };
-  }
-
-  async getResults(){
-    this.setState({
-      isLoading: true
-    });
-
-  }
-
   render(){
-    const sp = new ScrumPokerLib(this.props.name)
 
 
 
@@ -28,12 +12,7 @@ class ResultComponent extends React.Component {
       <p>Tu puntuación: {this.props.score}</p>
       <h3> Resto de puntuaciones: </h3>
       <ul>
-        {
-          sp.on('reveal', async cards => {
-            cards.forEach(c =>
-              <li>{c.user} voted {c.value}</li>)
-          })
-        }
+
       </ul>
       </div>
     );
@@ -41,8 +20,7 @@ class ResultComponent extends React.Component {
     const wait = (
       <p>Esperando por el resto de puntuaciones</p>
     );
-    console.log(sp.getValues());
-    if (this.getResults){
+    if (this.props.isFetching){
       return wait;
     }
     return results;
@@ -51,6 +29,7 @@ class ResultComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    isFetching: state.MainReducer.isFetching,
     name : state.MainReducer.name,
     score : state.MainReducer.score
   }

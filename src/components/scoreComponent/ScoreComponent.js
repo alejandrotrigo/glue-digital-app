@@ -13,7 +13,6 @@ class ScoreComponent extends React.Component{
       score: 0
     };
 
-    this.onClickButton = this.onClickButton.bind(this);
   }
 
   onClickButton(value){

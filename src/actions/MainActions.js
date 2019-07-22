@@ -28,21 +28,24 @@ function getScoresResponse(scores){
   }
 }
 
-export function getScores(name){
+export function getScores(name, score){
   return dispatch => {
     dispatch(getScoresRequest(true));
-    let userScores = {};
+    let userScores = [];
+    console.log(score);
     const sp = new ScrumPokerLib(name);
     sp.on('reveal', cards => {
-      cards.forEach(c =>{
+      cards.forEach(card =>{
         var userScore ={};
-        userScore.user = c.user;
-        userScore.value = c.value;
+        userScore.user = card.user;
+        userScore.value = card.value;
         userScores.push(userScore);
       });
       dispatch(getScoresResponse(userScores));
     });
-
+    var aa = sp.pick(parseInt(score));
+    console.log(sp.getValues());
+    console.log(aa);
   }
 
 }

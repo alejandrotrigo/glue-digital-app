@@ -6,11 +6,11 @@ class ResultComponent extends React.Component {
 
   constructor(props){
     super(props);
-    this.props.getScores(this.props.name);
   }
 
   getScores(){
     let lis = [];
+    console.log(this.props.otherScores)
     for (var u in this.props.otherScores){
       lis.push(<li> {u.user} -> {u.score} </li>);
     }
@@ -23,9 +23,9 @@ class ResultComponent extends React.Component {
       <p>Tu puntuación: {this.props.score}</p>
       <h3> Resto de puntuaciones: </h3>
       <ul>
-        {
-          this.getScores()
-        }
+      {this.props.otherScores.map( (userScore, i) =>
+         <li key={i}> {userScore.user} -> {userScore.value} </li>
+       )}
       </ul>
       </div>
     );
@@ -54,12 +54,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getScores: (name) => { dispatch(getScores(name))}
-  }
-}
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)(ResultComponent);
+  null)(ResultComponent);

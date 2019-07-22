@@ -3,7 +3,7 @@ const initialState = {
   name: '',
   score: 0,
   isFetching: false,
-  otherScores: {}
+  otherScores: []
 }
 
 export default function MainReducer(state = initialState, action) {

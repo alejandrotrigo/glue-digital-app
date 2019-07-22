@@ -16,10 +16,8 @@ class ScoreComponent extends React.Component{
     this.onClickButton = this.onClickButton.bind(this);
   }
 
-  onClickButton(event){
-    event.preventDefault();
-    console.log(event.target.value)
-    this.props.addScore(event.target.value);
+  onClickButton(value){
+    this.props.addScore(value);
     this.props.history.push('/result');
 
   }
@@ -29,22 +27,22 @@ class ScoreComponent extends React.Component{
       <div>
         <h1> Elige tu puntuación {this.props.name} </h1>
         <ButtonGroup size="small" aria-label="Small outlined button group">
-              <Button onClick={this.onClickButton} >1</Button>
-              <Button onClick={this.onClickButton}>2</Button>
-              <Button onClick={this.onClickButton}>3</Button>
+              <Button onClick={() => this.onClickButton( 1)} >1</Button>
+              <Button onClick={() => this.onClickButton( 2)}>2</Button>
+              <Button onClick={() => this.onClickButton( 3)}>3</Button>
         </ButtonGroup>
         <br />
         <ButtonGroup size="small" aria-label="Small outlined button group">
-              <Button onClick={this.onClickButton}>5</Button>
-              <Button onClick={this.onClickButton}>8</Button>
-              <Button onClick={this.onClickButton}>13</Button>
+              <Button onClick={() => this.onClickButton( 5)}>5</Button>
+              <Button onClick={() => this.onClickButton( 8)}>8</Button>
+              <Button onClick={() => this.onClickButton( 13)}>13</Button>
         </ButtonGroup>
         <br />
 
         <ButtonGroup size="small" aria-label="Small outlined button group">
-              <Button onClick={this.onClickButton}>20</Button>
-              <Button onClick={this.onClickButton}>40</Button>
-              <Button onClick={this.onClickButton}>100</Button>
+              <Button onClick={() => this.onClickButton( 20)}>20</Button>
+              <Button onClick={() => this.onClickButton( 40)}>40</Button>
+              <Button onClick={() => this.onClickButton( 100)}>100</Button>
         </ButtonGroup>
 
 

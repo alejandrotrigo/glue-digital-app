@@ -1,7 +1,8 @@
 
 const initialState = {
   name: '',
-  score: 0
+  score: 0,
+  isFetching: false
 }
 
 export default function MainReducer(state = initialState, action) {

@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
     isFetching: state.mainReducer.isFetching,
     name : state.mainReducer.name,
     score : state.mainReducer.score,
-    otherScores : state.ainReducer.otherScores
+    otherScores : state.mainReducer.otherScores
   }
 }
 

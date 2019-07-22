@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import styles from './homeComponent.css';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -32,7 +31,7 @@ class HomeComponent extends React.Component {
   render(){
 
     return(
-      <div className={styles.homeComponent}>
+      <div>
         <h3>Como te llamas?</h3>
         <TextField onChange={this.handleChange}/>
         <Button variant="contained"

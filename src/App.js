@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import HomeComponent from './components/homeComponent/HomeComponent';
@@ -20,7 +21,10 @@ let store = createStore(
   combineReducers({
     ...reducers,
     main: reducers.MainReducer
-  })
+  }),
+  composeEnhancers(compose(
+    applyMiddleware(thunkMiddleware)
+  ))
 );
 
 

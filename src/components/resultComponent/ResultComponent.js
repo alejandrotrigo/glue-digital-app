@@ -30,9 +30,8 @@ class ResultComponent extends React.Component {
       <ul>
         {
           sp.on('reveal', async cards => {
-            cards.forEach(c => {
-              <li>{c.user} voted {c.value}</li>
-            })
+            cards.forEach(c =>
+              <li>{c.user} voted {c.value}</li>)
           })
         }
       </ul>

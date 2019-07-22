@@ -32,7 +32,6 @@ export function getScores(name, score){
   return dispatch => {
     dispatch(getScoresRequest(true));
     let userScores = [];
-    console.log(score);
     const sp = new ScrumPokerLib(name);
     sp.on('reveal', cards => {
       cards.forEach(card =>{
@@ -44,8 +43,6 @@ export function getScores(name, score){
       dispatch(getScoresResponse(userScores));
     });
     var aa = sp.pick(parseInt(score));
-    console.log(sp.getValues());
-    console.log(aa);
   }
 
 }

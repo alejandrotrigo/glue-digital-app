@@ -22,9 +22,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-<Route path="/loading" component={LoadingComponet} />
-
-*/

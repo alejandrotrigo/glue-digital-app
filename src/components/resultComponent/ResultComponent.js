@@ -47,10 +47,10 @@ class ResultComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.MainReducer.isFetching,
-    name : state.MainReducer.name,
-    score : state.MainReducer.score,
-    otherScores : state.MainReducer.otherScores
+    isFetching: state.mainReducer.isFetching,
+    name : state.mainReducer.name,
+    score : state.mainReducer.score,
+    otherScores : state.ainReducer.otherScores
   }
 }
 

@@ -6,7 +6,7 @@ const initialState = {
   otherScores: []
 }
 
-export default function MainReducer(state = initialState, action) {
+export default function mainReducer(state = initialState, action) {
   switch (action.type) {
     case types.ADD_NAME:
       return {

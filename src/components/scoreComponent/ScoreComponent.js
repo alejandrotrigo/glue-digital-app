@@ -57,8 +57,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    name : state.MainReducer.name,
-    score: state.MainReducer.score
+    name : state.mainReducer.name,
+    score: state.mainReducer.score
   }
 }
 

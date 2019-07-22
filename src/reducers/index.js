@@ -1,1 +1,1 @@
-export {default as MainReducer} from './MainReducer.js';
+export {default as mainReducer} from './mainReducer.js';
